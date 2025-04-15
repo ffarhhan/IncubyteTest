@@ -1,24 +1,19 @@
-# README
+# Incubyte Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails application that implements the String Calculator with RSpec.
 
-Things you may want to cover:
+## 🧰 Tech Stack
 
-* Ruby version
+- **Ruby**: 3.x
+- **Rails**: 7.x
+- **RSpec**: for test suite
 
-* System dependencies
+---
 
-* Configuration
+## 🚀 Getting Started
 
-* Database creation
+### 1. Clone the repository
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+git clone https://github.com/your-username/IncubyteTest.git
+cd IncubyteTest
