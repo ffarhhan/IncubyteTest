@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Calculator # rubocop:disable Style/Documentation
-  def add(numbers) # rubocop:disable Metrics/MethodLength
+  def add(numbers) # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
     return 0 if numbers.empty?
 
     delimiter_pattern = /,|\n/
@@ -18,7 +18,16 @@ class Calculator # rubocop:disable Style/Documentation
           Regexp.escape(delimiter_section[2])
         end
     end
+    nums = numbers.split(delimiter_pattern).map(&:to_i)
+    check_for_negatives(nums)
 
-    numbers.split(delimiter_pattern).map(&:to_i).sum
+    nums.sum
+  end
+
+  private
+
+  def check_for_negatives(nums)
+    negatives = nums.select(&:negative?)
+    raise "Negative number not allowed: #{negatives.join(', ')}" if negatives.any?
   end
 end
